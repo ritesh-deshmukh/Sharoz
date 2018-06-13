@@ -1,0 +1,190 @@
+{% load staticfiles %}
+
+{% url 'home' as home %}
+{% url 'about' as about %}
+{% url 'suggest' as suggest %}
+{% url 'products' as products %}
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Sharoz: Suggest</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'sharoz/assets/css/main.css' %}"/>
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="{{ home }}">Sharoz</a></h1>
+        <nav class="links">
+            <ul>
+                <li><a href="{{ home }}">Home</a></li>
+                <li><a href="{{ products }}">Products</a></li>
+                <li><a href="{{ about }}">About us</a></li>
+
+
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+        <!-- Links -->
+        <section>
+            <ul class="links">
+                <li>
+                    <a href="{{ home }}">
+                        <h3>Home</h3>
+
+                        <p>Everything in summary.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ products }}">
+                        <h3>Products</h3>
+
+                        <p>What do you want to buy?</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ about }}">
+                        <h3>About us</h3>
+
+                        <p>Something you want to know about us</p>
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+
+
+        <section id="intro">
+            <header>
+
+                <img style="width: 100%; height: auto; max-width: 400px;max-height: 115px"
+                     src="{% static 'sharoz/images/logosh.svg' %}" alt=""/>
+                <br>
+                <br>
+
+            </header>
+        </section>
+
+        <!-- Main -->
+        <section id="main" class="container">
+            <header>
+                <h2>Suggestions?</h2>
+
+                <p><b>We would love to hear from you.</b></p>
+
+            </header>
+
+            <div class="row">
+                <div class="12u">
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+
+                    <!-- Form -->
+                    <section class="box">
+                        <h3></h3>
+
+                        <form method="post" action="/submit/suggestion/">
+                            {% csrf_token %}
+                            <div class="row uniform 50%">
+                                <div class="6u 12u(mobilep)">
+                                    <input type="text" name="name" id="name" value="" placeholder="Name"/>
+                                </div>
+                                <div class="6u 12u(mobilep)">
+                                    <input type="email" name="email" id="email" value="" placeholder="Email"/>
+                                </div>
+                            </div>
+
+                            <div class="row uniform 50%">
+
+                                <div class="6u 12u(narrower)">
+                                    <input type="checkbox" id="human" name="human" checked>
+                                    <label for="human">I am a human and not a robot</label>
+                                </div>
+                            </div>
+                            <div class="row uniform 50%">
+                                <div class="12u">
+                                    <textarea name="message" id="message" placeholder="Enter your message"
+                                              rows="6"></textarea>
+                                </div>
+                            </div>
+                            <div class="row uniform">
+                                <div class="12u">
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Send Message"/></li>
+                                        <li><input type="reset" value="Reset" class="alt"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+
+                        <hr/>
+
+
+                    </section>
+                </div>
+                <!-- Footer -->
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>Copyright &copy; Sharoz</li>
+                    </ul>
+                </footer>
+
+
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+
+
+<!-- Scripts -->
+<script src="{% static 'sharoz/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'sharoz/assets/js/skel.min.js' %}"></script>
+<script src="{% static 'sharoz/assets/js/util.js' %}"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="{% static 'sharoz/assets/js/main.js' %}"></script>
+
+
+</html>

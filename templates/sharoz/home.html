@@ -1,0 +1,273 @@
+{% load staticfiles %}
+
+{% url 'home' as home %}
+{% url 'about' as about %}
+{% url 'suggest' as suggest %}
+{% url 'products' as products %}
+
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Sharoz: Home</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'sharoz/assets/css/main.css' %}"/>
+</head>
+<body>
+
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="{{ home }}">Sharoz</a></h1>
+        <nav class="links">
+            <ul>
+                <li><a href="{{ home }}">Home</a></li>
+                <li><a href="{{ products }}">Products</a></li>
+                <li><a href="{{ about }}">About us</a></li>
+                <li><a href="{{ suggest }}">Suggest/Question/Query</a></li>
+
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+        <!-- Links -->
+        <section>
+            <ul class="links">
+                <li>
+                    <a href="{{ products }}">
+                        <h3>Products</h3>
+
+                        <p>What do you want to buy?</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ about }}">
+                        <h3>About us</h3>
+
+                        <p>Something you want to know about us</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ suggest }}">
+                        <h3>Suggest</h3>
+
+                        <p>How do you think we can improve</p>
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Post -->
+
+
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h2>Accesorize yourself!!!</h2>
+
+                    <p></p>
+                </div>
+
+            </header>
+            <a class="image featured"><img src="static/sharoz/images/homeimg3.gif" alt=""/></a>
+
+
+            <footer>
+                <ul class="actions">
+                    <li><a href="{{ products }}" class="button big">Shop Now!</a></li>
+                </ul>
+
+            </footer>
+        </article>
+
+        <!-- Post -->
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h2><a href="#">Us at Sharoz</a></h2>
+
+                    <p>Sharoz aims at providing the best products in its own category. We reach the demands of the
+                        masses and provide to them accordingly.</p>
+                </div>
+
+            </header>
+            <a class="image featured"><img src="{% static 'sharoz/images/wordcloud.svg' %}" alt=""/></a>
+
+
+            <footer>
+                <ul class="actions">
+                    <li><a href="{{ about }}" class="button big">Read More!</a></li>
+                </ul>
+
+            </footer>
+        </article>
+
+
+    </div>
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+
+        <!-- Intro -->
+        <section id="intro">
+
+            <header>
+                <br>
+                <br>
+
+                <img style="width: 100%; height: auto; max-width: 400px;max-height: 115px"
+                     src="{% static 'sharoz/images/logosh.svg' %}" alt=""/>
+
+                <br>
+                <br>
+
+            </header>
+        </section>
+
+        <!-- Mini Posts -->
+        <section>
+            <b> Our Latest Releases.</b>
+            <br>
+            <br>
+            <div class="mini-posts">
+
+                <!-- Mini Post -->
+                {% for product in latest_products %}
+
+                    <article class="mini-post">
+                        <header>
+
+                            <h3><a href="{{ products }}">{{ product.name }}</a></h3>
+
+                            <time class="published" datetime="2015-10-20">{{ product.description }}</time>
+
+                        </header>
+
+                    </article>
+
+                {% endfor %}
+
+            </div>
+
+            <!-- Posts List -->
+            <section>
+
+                <ul class="posts">
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="#">Find us at</a></h3>
+                                <!--	<time class="published" datetime="2015-10-20">October 20, 2015</time> -->
+                            </header>
+
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.flipkart.com/">Flipkart</a></h3>
+                                <!--	<time class="published" datetime="2015-10-15">October 15, 2015</time> -->
+                            </header>
+                            <a href="http://www.flipkart.com/" class="image"><img
+                                    src="http://static.dnaindia.com/sites/default/files/2015/09/22/378260-flipkart-twitter.png"
+                                    alt=""/></a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.snapdeal.com/">Snapdeal</a></h3>
+                                <!--	<time class="published" datetime="2015-10-10">October 10, 2015</time> -->
+                            </header>
+                            <a href="http://www.snapdeal.com/" class="image"><img
+                                    src="http://dwtricks.com/wp-content/uploads/2015/10/unnamed.png" alt=""/></a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.myntra.com/">Myntra</a></h3>
+                                <!--		<time class="published" datetime="2015-10-08">October 8, 2015</time> -->
+                            </header>
+                            <a href="http://www.myntra.com/" class="image"><img
+                                    src="http://www.letsintern.com/blog/wp-content/uploads/2015/10/26-1443262056-myntra-logo-image.jpg"
+                                    alt=""/></a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.amazon.com/">Amazon</a></h3>
+                                <!--	<time class="published" datetime="2015-10-06">October 7, 2015</time> -->
+                            </header>
+                            <a href="http://www.amazon.com/" class="image"><img
+                                    src="http://www.turnerduckworth.com/media/filer_public/86/18/86187bcc-752a-46f4-94d8-0ce54b98cd46/td-amazon-smile-logo-01-large.jpg"
+                                    alt=""/></a>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- About -->
+            <section class="blurb">
+                <h2>About Us</h2>
+
+                <p>We at Sharoz, not only create new trends but also help people utilize them. Products ranging from
+                    hair band to belts to hair clips to clutches, we have them all. To know more click on the big button
+                    below.</p>
+                <ul class="actions">
+                    <li><a href="{{ about }}" class="button">Learn More</a></li>
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <section id="footer">
+                <ul class="icons">
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                    <!--	<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+                        <li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li> -->
+                    <li>Copyright &copy; Sharoz</li>
+                </ul>
+                <!--	<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p> -->
+            </section>
+
+        </section>
+    </section>
+
+</div>
+
+
+</body>
+
+
+<!-- Scripts -->
+<script src="{% static 'sharoz/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'sharoz/assets/js/skel.min.js' %}"></script>
+<script src="{% static 'sharoz/assets/js/util.js' %}"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="{% static 'sharoz/assets/js/main.js' %}"></script>
+
+
+</html>

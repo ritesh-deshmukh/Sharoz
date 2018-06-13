@@ -1,0 +1,176 @@
+{% load staticfiles %}
+
+
+{% url 'home' as home %}
+{% url 'about' as about %}
+{% url 'suggest' as suggest %}
+{% url 'products' as products %}
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Sharoz: About Us</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'sharoz/assets/css/main.css' %}"/>
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="{{ home }}">Sharoz</a></h1>
+        <nav class="links">
+            <ul>
+                <li><a href="{{ home }}">Home</a></li>
+                <li><a href="{{ products }}">Products</a></li>
+                <li><a href="{{ suggest }}">Suggest/Question/Query</a></li>
+
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+        <!-- Links -->
+        <section>
+            <ul class="links">
+                <li>
+                    <a href="{{ home }}">
+                        <h3>Home</h3>
+
+                        <p>Everything in summary.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ products }}">
+                        <h3>Products</h3>
+
+                        <p>What do you want to buy?</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ suggest }}">
+                        <h3>Suggest</h3>
+
+                        <p>How do you think we can improve</p>
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+    </section>
+
+
+    <!-- Main -->
+    <div id="main">
+
+
+        <section id="intro">
+            <header>
+
+                <img style="width: 100%; height: auto; max-width: 400px;max-height: 115px"
+                     src="{% static 'sharoz/images/logosh.svg' %}" alt=""/>
+                <br>
+                <br>
+
+            </header>
+        </section>
+
+        <!-- Main -->
+        <section id="main" class="container">
+            <header>
+                <h2>About Us!</h2>
+
+            </header>
+            <div class="row">
+                <div class="12u">
+
+                    <!-- Text -->
+                    <section class="box">
+                        <h3><b>How we care for you! </b></h3>
+                        <!-- <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+                        This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+                        This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p> -->
+
+                        <p><i>Created around  a philosophy  of celebrating style, SHAROZ leads with design.<br>
+                            We offer unique and personalized styling to suit the evolving sensibilities and needs of the stylish Indian women, be it for work, a special occasion or a casual outing.<br>
+                            Our offerings at SHAROZ have been specifically designed around certain categories</i></p>
+
+
+                        <hr/>
+
+                        <header>
+                            <h3><b>How we put each and every "bit" into consideration!</b></h3>
+
+                            <p><i>The designers at SHAROZ carefully select elements that embellish the accesories for its aesthetic appeal and style quotient.<br>
+                                A combination of these attributes will be found across the entire collection we have in store.</i></p>
+                        </header>
+
+
+                    </section>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+
+                </div>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>Copyright &copy; Sharoz</li>
+                    </ul>
+                </footer>
+
+
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+
+
+<!-- Scripts -->
+<script src="{% static 'sharoz/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'sharoz/assets/js/skel.min.js' %}"></script>
+<script src="{% static 'sharoz/assets/js/util.js' %}"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="{% static 'sharoz/assets/js/main.js' %}"></script>
+
+</html>
